@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -89,7 +88,6 @@ public class TrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenDeleteItemIsSuccessful() {
         Tracker tracker = new Tracker();
         Item item = new Item("Bug");
@@ -100,7 +98,6 @@ public class TrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenDeleteItemIsNotSuccessful() {
         Tracker tracker = new Tracker();
         Item item = new Item("Bug");
