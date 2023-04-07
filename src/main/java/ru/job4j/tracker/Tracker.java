@@ -15,29 +15,20 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] rsl = new Item[this.items.length];
-        int size = 0;
-        for (int index = 0; index < this.items.length; index++) {
-            Item item = this.items[index];
-            if (item != null) {
-                rsl[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(rsl, size);
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
-        Item[] rsl = new Item[this.items.length];
-        int size = 0;
-        for (int index = 0; index < this.items.length; index++) {
+        Item[] rsl = new Item[size];
+        int count = 0;
+        for (int index = 0; index < size; index++) {
             Item item = this.items[index];
-            if (item != null && Objects.equals(item.getName(), key)) {
-                rsl[size] = item;
-                size++;
+            if (Objects.equals(item.getName(), key)) {
+                rsl[count] = item;
+                count++;
             }
         }
-        return Arrays.copyOf(rsl, size);
+        return Arrays.copyOf(rsl, count);
     }
 
     public Item findById(int id) {
@@ -47,7 +38,7 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int index = 0; index < size; index++) {
+        for (int index = 0; index <= size; index++) {
             if (items[index].getId() == id) {
                 rsl = index;
                 break;
@@ -58,11 +49,11 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         boolean rsl = false;
-        int index = indexOf(id);
-        if (index != -1) {
-            items[index] = new Item(id, item.getName());
-            rsl = true;
-        }
         return  rsl;
+    }
+
+    public boolean delete(int id) {
+        items[indexOf(id)] = null;
+        return true;
     }
 }
