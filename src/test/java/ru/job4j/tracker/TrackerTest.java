@@ -67,7 +67,6 @@ public class TrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenReplaceItemIsSuccessful() {
         Tracker tracker = new Tracker();
         Item item = new Item("Bug");
@@ -79,7 +78,6 @@ public class TrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenReplaceItemIsNotSuccessful() {
         Tracker tracker = new Tracker();
         Item item = new Item("Bug");
