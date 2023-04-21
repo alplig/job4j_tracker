@@ -68,6 +68,7 @@ public class AnalyzeByMap {
             rsl.add(new Label(m.getKey(), m.getValue()));
         }
         rsl.sort(Comparator.naturalOrder());
+        Collections.sort(rsl);
         return rsl.get(rsl.size() - 1);
     }
 }
