@@ -10,40 +10,26 @@ import static org.assertj.core.api.ListAssert.assertThatList;
 class ItemAscByNameTest {
     @Test
     public void whenItemsAscByName() {
-        List<Item> actual = Arrays.asList(
-                new Item("c"),
-                new Item("b"),
-                new Item("a"),
-                new Item("e"),
-                new Item("d")
-        );
-        List<Item> expected = List.of(
-                new Item("a"),
-                new Item("b"),
-                new Item("c"),
-                new Item("d"),
-                new Item("e")
-        );
+        Item a = new Item("a");
+        Item b = new Item("b");
+        Item c = new Item("c");
+        Item d = new Item("d");
+        Item e = new Item("e");
+        List<Item> actual = Arrays.asList(c, b, a, e, d);
+        List<Item> expected = List.of(a, b, c, d, e);
         actual.sort(new ItemAscByName());
         assertThatList(actual).isEqualTo(expected);
     }
 
     @Test
     public void whenSortedItemsAscByName() {
-        List<Item> actual = Arrays.asList(
-                new Item("a"),
-                new Item("b"),
-                new Item("c"),
-                new Item("d"),
-                new Item("e")
-        );
-        List<Item> expected = List.of(
-                new Item("a"),
-                new Item("b"),
-                new Item("c"),
-                new Item("d"),
-                new Item("e")
-        );
+        Item a = new Item("a");
+        Item b = new Item("b");
+        Item c = new Item("c");
+        Item d = new Item("d");
+        Item e = new Item("e");
+        List<Item> actual = Arrays.asList(a, b, c, d, e);
+        List<Item> expected = List.of(a, b, c, d, e);
         actual.sort(new ItemAscByName());
         assertThatList(actual).isEqualTo(expected);
     }
