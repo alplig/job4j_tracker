@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.ListAssert.assertThatList;
 
 class ItemDescByNameTest {
     @Test
     public void whenItemsDescByName() {
-        List<Item> items = Arrays.asList(
+        List<Item> actual = Arrays.asList(
                 new Item("c"),
                 new Item("b"),
                 new Item("a"),
@@ -24,13 +24,13 @@ class ItemDescByNameTest {
                 new Item("b"),
                 new Item("a")
         );
-        items.sort(new ItemDescByName());
-        assertThat(items.toString()).isEqualTo(expected.toString());
+        actual.sort(new ItemDescByName());
+        assertThatList(actual).isEqualTo(expected);
     }
 
     @Test
     public void whenSortedItemsDescByName() {
-        List<Item> items = Arrays.asList(
+        List<Item> actual = Arrays.asList(
                 new Item("e"),
                 new Item("d"),
                 new Item("c"),
@@ -44,7 +44,7 @@ class ItemDescByNameTest {
                 new Item("b"),
                 new Item("a")
         );
-        items.sort(new ItemDescByName());
-        assertThat(items.toString()).isEqualTo(expected.toString());
+        actual.sort(new ItemDescByName());
+        assertThatList(actual).isEqualTo(expected);
     }
 }
