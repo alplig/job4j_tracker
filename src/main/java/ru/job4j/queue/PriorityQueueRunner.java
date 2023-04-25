@@ -9,9 +9,6 @@ public class PriorityQueueRunner {
         transactions.offer(new Transaction(1, "number_1", 100));
         transactions.offer(new Transaction(2, "number_2", 1000));
         transactions.offer(new Transaction(3, "number_3", 85));
-
-        //printTransactionElements(transactions);
-
         PriorityQueue<Transaction> transactions1 = new PriorityQueue<>(new TransactionSortDescById());
         transactions1.addAll(transactions);
         printTransactionElements(transactions1);
