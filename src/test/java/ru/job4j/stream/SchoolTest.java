@@ -37,9 +37,7 @@ public class SchoolTest {
                 new Student(80, "Surname8")
         );
         School school = new School();
-        Predicate<Student> min = x -> x.getScore() >= 50;
-        Predicate<Student> max = x -> x.getScore() < 70;
-        Predicate<Student> predicate = min.and(max);
+        Predicate<Student> predicate = x -> x.getScore() >= 50 && x.getScore() < 70;
         List<Student> result = school.collect(students, predicate);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(50, "Surname5"));
