@@ -12,8 +12,6 @@ public class CardDeck {
         cd.cardsDeck = Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(Value.values())
                         .map(value -> new Card(suit, value))).toList();
-        for (Card c: cd.cardsDeck) {
-            System.out.println(c.getSuit() + " " + c.getValue());
-        }
+        cd.cardsDeck.forEach(c -> System.out.println(c.getSuit() + " " + c.getValue()));
     }
 }
